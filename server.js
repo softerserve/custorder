@@ -1,5 +1,7 @@
 var express = require('express'),
     app = express();
+	
+var port = process.env.PORT || 8080;
 
 //Express 3
 //app.configure(function() {
@@ -51,7 +53,11 @@ app.delete('/customers/:id', function(req, res) {
     res.json(data);
 });
 
-app.listen(8080);
+//app.listen(8080);
+
+app.listen(port, function() {
+    console.log('The app is running on port ' + port);
+});
 
 console.log('Express listening on port 8080');
 
